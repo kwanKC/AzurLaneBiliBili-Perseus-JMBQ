@@ -48,6 +48,7 @@ java -jar apktool.jar -q -f d com.bilibili.AzurLane.apk
 
 echo "Copy Perseus libs"
 cp -r JMBQ_Perseus/. com.bilibili.AzurLane/lib/
+ls -l com.bilibili.AzurLane/lib/
 
 echo "Patching Azur Lane with Perseus"
 oncreate=$(grep -n -m 1 'onCreate' com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali | sed  's/[0-9]*\:\(.*\)/\1/')

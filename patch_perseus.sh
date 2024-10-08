@@ -50,6 +50,8 @@ echo "Copy Perseus libs"
 cp -r JMBQ_Perseus/. com.bilibili.AzurLane/lib/
 ls -l com.bilibili.AzurLane/lib/
 
+echo "check oncreate"
+grep -i -A5 oncreate com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali
 echo "Patching Azur Lane with Perseus"
 oncreate=$(grep -n -m 1 'onCreate' com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali | sed  's/[0-9]*\:\(.*\)/\1/')
 #sed -ir "s#\($oncreate\)#.method private static native init(Landroid/content/Context;)V\n.end method\n\n\1#" com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali

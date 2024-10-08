@@ -40,7 +40,7 @@ fi
 # Download Perseus
 if [ ! -d "Perseus" ]; then
     echo "Downloading Perseus"
-    git clone ttps://github.com/kwanKC/JMBQ_Perseus
+    git clone https://github.com/kwanKC/JMBQ_Perseus
 fi
 
 echo "Decompile Azur Lane apk"

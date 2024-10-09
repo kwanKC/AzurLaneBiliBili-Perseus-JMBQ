@@ -58,7 +58,7 @@ oncreate=$(grep -n -m 1 'onCreate' com.bilibili.AzurLane/smali_classes2/com/unit
 #sed -ir "s#\($oncreate\)#.method private static native init(Landroid/content/Context;)V\n.end method\n\n\1#" com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali
 #sed -ir "s#\($oncreate\)#\1\n    const-string v0, \"JMBQ\"\n\n\    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V\n\n    invoke-static {p0}, Lcom/unity3d/player/UnityPlayerActivity;->init(Landroid/content/Context;)V\n#" com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali
 #sed -ir "s#\($oncreate\)#\1\n    const-string v0, \"JMBQ\"\n\n\    invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V\n\n#" com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali
-sed  '/\.method protected onCreate/{N;s/\(.*\)\n\(.*\)/\1\n\2\n    const-string v0, "JMBQ"\n\n    invoke-static {v0}, Ljava\/lang\/System;->loadLibrary(Ljava\/lang\/String;)V/}' com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali
+sed  -i '/\.method protected onCreate/{N;s/\(.*\)\n\(.*\)/\1\n\2\n    const-string v0, "JMBQ"\n\n    invoke-static {v0}, Ljava\/lang\/System;->loadLibrary(Ljava\/lang\/String;)V/}' com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali
 cat com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.smali
 echo "Patching Azur Lane with Perseus done====="
 

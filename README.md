@@ -26,7 +26,7 @@ cat com.bilibili.AzurLane/smali_classes2/com/unity3d/player/UnityPlayerActivity.
 echo "Patching Azur Lane with Perseus done===="
 ```
 根据JMBQ的使用指南，需要修改UnityPlayerActivity.smali的位置与Egoistically原本的[Perseus](https://github.com/Egoistically/Perseus)不同，所以换了`sed`语句
-通过Actions里workflow的执行结果来看，成功的按照JMBQ指定的方式，在.locals 2的下方添加了指定的代码（[Perseus Build #15](https://github.com/kwanKC/AzurLaneBiliBili-Perseus-JMBQ/actions/runs/11249131313/job/31275472265)）
+通过Actions里workflow的执行结果来看，成功的按照JMBQ指定的方式，在`.locals 2`的下方添加了指定的代码（[Perseus Build #15](https://github.com/kwanKC/AzurLaneBiliBili-Perseus-JMBQ/actions/runs/11249131313/job/31275472265)）
 
 ## 问题
 - 将原有的`Perseus.ini`改名为`JMBQ.ini`后，闪退的情况依然存在，由于打开即闪退，判断应该是修改不完整
